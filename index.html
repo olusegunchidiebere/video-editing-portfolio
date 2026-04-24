@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chidi Edits | Video Editor Portfolio</title>
+    <meta name="description"
+        content="Portfolio of a professional video editor specializing in cinematic storytelling, motion graphics, and color grading.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Chidi<span>Edits.</span></a>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Showreel</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="video-container">
+            <!-- Motion Graphics Background using CSS Orbs -->
+            <div class="bg-orb orb-1"></div>
+            <div class="bg-orb orb-2"></div>
+            <div class="bg-orb orb-3"></div>
+            <div class="mesh-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="reveal-text">I Turn Ideas Into <br><span class="highlight">Cinematic Stories</span></h1>
+            <p class="hero-subtext fade-up">Professional Video Editing & Motion Graphics</p>
+            <div class="hero-actions fade-up delay-1">
+                <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <p>Scroll</p>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container section-grid">
+            <div class="about-image reveal-left">
+                <div class="image-wrapper">
+                    <img src="pexels-cmrcn-17147713.jpg" alt="Editor at work">
+                    <div class="experience-badge">
+                        <span class="number">2+</span>
+                        <span class="text">Years of<br>Experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-text reveal-right">
+                <h2 class="section-title">Crafting <span>Visual</span> Poetry</h2>
+                <p class="bio">I am a passionate video editor and motion designer dedicated to bringing stories to life.
+                    My approach focuses on rhythm, emotion, and aesthetic precision to create content that captivates
+                    and engages audiences.</p>
+
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Adobe After Effects</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="--target: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Lumia Fusion (Color Grading)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="--target: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span>Motion Graphics</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="--target: 88%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section bg-darker">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <h2 class="section-title">Selected <span>Works</span></h2>
+                <p class="section-subtitle">Explore a selection of my latest commercial, narrative, and social projects.
+                </p>
+            </div>
+
+            <!-- Main Showreel -->
+            <div class="showreel-container reveal-up">
+                <div class="video-wrapper">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop"
+                        class="video-placeholder" alt="Showreel Thumbnail">
+                    <button class="play-btn"><i class="fas fa-play"></i></button>
+                </div>
+                <h3>2026 Directing & Editing Showreel</h3>
+            </div>
+
+            <!-- Grid Gallery -->
+            <div class="portfolio-grid mt-5" id="portfolio-grid">
+                <!-- Items will be injected dynamically from data/projects.json -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-title">My <span>Expertise</span></h2>
+                <p class="section-subtitle">Delivering high-end post-production services tailored to your project's
+                    needs.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-film"></i></div>
+                    <h3>Video Editing</h3>
+                    <p>From narrative structuring to seamless cut transitions, I build engaging stories for commercials,
+                        documentaries, and YouTube.</p>
+                </div>
+
+                <div class="service-card reveal-up delay-1">
+                    <div class="service-icon"><i class="fas fa-magic"></i></div>
+                    <h3>Motion Graphics</h3>
+                    <p>Elevate your visuals with custom 2D/3D animations, lower thirds, kinetic typography, and engaging
+                        visual effects.</p>
+                </div>
+
+                <div class="service-card reveal-up delay-2">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Color Grading</h3>
+                    <p>Achieve cinematic looks that evoke emotion. Specialized in color correction, shot matching, and
+                        creative stylized looks.</p>
+                </div>
+
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Short-Form Content</h3>
+                    <p>Optimized edits for TikTok, Reels, and Shorts designed to maximize viewer retention and
+                        engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section bg-darker">
+        <div class="container">
+            <div class="section-header text-center reveal-up">
+                <h2 class="section-title">Client <span>Reviews</span></h2>
+            </div>
+
+            <div class="testimonials-slider reveal-up">
+                <div class="testimonial">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="review-text">"Working with this editor fundamentally changed the impact of our brand
+                        campaigns. The pacing, the aesthetic, and the attention to detail are simply unmatched. A true
+                        professional."</p>
+                    <div class="client-info">
+                        <div class="avatar"><img src="pamilerin.jpg" alt="Client">
+                        </div>
+                        <div>
+                            <h4>Olorunsola Emmanuel</h4>
+                            <span>Sujimoto Group - Social Media Executive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="review-text">"Delivered a stunning Documentary video cut well ahead of schedule.
+                        Understood the
+                        vision perfectly and added creative flair that we didn't even know we needed."</p>
+                    <div class="client-info">
+                        <div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        </div>
+                        <div>
+                            <h4>Marcus Cole</h4>
+                            <span>Independent Artist</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <div class="contact-info reveal-left">
+                <h2 class="section-title">Let's Create <span>Together</span></h2>
+                <p>Have a project in mind or want to discuss a potential collaboration? Send me a message and let's make
+                    it happen.</p>
+
+                <ul class="contact-methods">
+                    <li><i class="fas fa-envelope"></i> chidiebereolusegun200601@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ikorodu, Lagos (Remote Worldwide)</li>
+                </ul>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/no.face.anime.way?igsh=MW84NWJlbTY0OTdkcg==" target="_blank"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/@chidi_makes_edits?si=Ad22_Dm3uQzsTRr-" target="_blank"
+                        aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/chidiebere-olusegun-0725a9321?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.tiktok.com/@chidiedits?_r=1&_t=ZN-95hccNe9PSI" target="_blank"
+                        aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form reveal-right">
+                <form name="contact" method="POST" data-netlify="true" id="contact-form">
+                    <!-- Required hidden field for Netlify Forms detection -->
+                    <input type="hidden" name="form-name" value="contact">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" placeholder=" " required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="phone" name="phone" placeholder=" ">
+                        <label for="phone">Phone / WhatsApp</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="subject" name="subject" placeholder=" " required>
+                        <label for="subject">Project Subject</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+                        <label for="message">Project Details</label>
+                    </div>
+                    <div id="form-status"
+                        style="display: none; padding: 15px; margin-bottom: 20px; border-radius: 5px; font-weight: 500;">
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Chidi<span>Edits.</span></div>
+            <p class="copyright">&copy; 2026 Chidi Edits. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

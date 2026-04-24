@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "title": "Neon Nights Campaign",
+      "category": "Commercial",
+      "description": "Fast-paced editing & color grading for a streetwear brand.",
+      "thumbnail": "pexels-cmrcn-17147713.jpg",
+      "link": "#",
+      "videoLink": ""
+    },
+    {
+      "title": "Urban Origins",
+      "category": "Documentary",
+      "description": "Emotion-driven narrative editing for a local documentary short.",
+      "thumbnail": "https://images.unsplash.com/photo-1616262373466-da4257dbda8d?q=80&w=800&auto=format&fit=crop",
+      "link": "#",
+      "videoLink": ""
+    },
+    {
+      "title": "TikTok / Reels Optimization",
+      "category": "Social Media",
+      "description": "High-retention short form content with dynamic subtitles.",
+      "thumbnail": "https://images.unsplash.com/photo-1626307416562-ee839676f5fc?q=80&w=800&auto=format&fit=crop",
+      "link": "#",
+      "videoLink": ""
+    }
+  ]
+}
