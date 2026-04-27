@@ -317,9 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadPortfolioProjects();
 
-    // 7. Contact Form — Netlify Forms compatible
-    // On Netlify: submits natively (data-netlify="true" handles it server-side).
-    // Locally / preview: intercepts and shows a polite in-browser confirmation.
+    // 7. Contact Form — Netlify Forms via AJAX (prevents 404 redirect)
     const form = document.getElementById('contact-form');
     const statusDiv = document.getElementById('form-status');
     const submitBtn = form ? form.querySelector('.submit-btn') : null;
@@ -337,31 +335,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (form) {
         form.addEventListener('submit', function (e) {
-            // Detect Netlify environment: the host will NOT be 'localhost' or '127.0.0.1'
-            const isNetlify = !['localhost', '127.0.0.1', ''].includes(window.location.hostname);
-
-            if (isNetlify) {
-                // Let Netlify handle the native POST — do NOT prevent default.
-                // Disable button & show sending state.
-                if (btnSpan) btnSpan.textContent = 'Sending…';
-                if (submitBtn) submitBtn.disabled = true;
-                // Netlify will redirect to a success page unless action attribute is set;
-                // we keep default behavior so the form actually works on deploy.
-                return;
-            }
-
-            // Local / file:// preview — prevent default and show success UI.
             e.preventDefault();
+
             if (btnSpan) btnSpan.textContent = 'Sending…';
             if (submitBtn) submitBtn.disabled = true;
             if (statusDiv) statusDiv.style.display = 'none';
 
-            setTimeout(() => {
-                showStatus('✔ Message received! (Live form submissions work once deployed to Netlify.)', true);
-                form.reset();
-                if (btnSpan) btnSpan.textContent = 'Send Message';
-                if (submitBtn) submitBtn.disabled = false;
-            }, 800);
+            // Detect Netlify environment
+            const isNetlify = !['localhost', '127.0.0.1', ''].includes(window.location.hostname);
+
+            if (isNetlify) {
+                // Submit via AJAX to Netlify Forms — avoids the 404 redirect
+                const formData = new FormData(form);
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showStatus('✔ Message sent successfully! I\'ll get back to you soon.', true);
+                        form.reset();
+                    } else {
+                        showStatus('✖ Something went wrong. Please try again or email me directly.', false);
+                    }
+                })
+                .catch(() => {
+                    showStatus('✖ Network error. Please check your connection and try again.', false);
+                })
+                .finally(() => {
+                    if (btnSpan) btnSpan.textContent = 'Send Message';
+                    if (submitBtn) submitBtn.disabled = false;
+                });
+            } else {
+                // Local / file:// preview — show mock success UI
+                setTimeout(() => {
+                    showStatus('✔ Message received! (Live form submissions work once deployed to Netlify.)', true);
+                    form.reset();
+                    if (btnSpan) btnSpan.textContent = 'Send Message';
+                    if (submitBtn) submitBtn.disabled = false;
+                }, 800);
+            }
         });
     }
 });
